@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="rK.smetsysesor.hye.mapper.BaseMapper">
+	
+	<!-- public ArrayList<BaseBoardVO> getList(); -->
+	<select id="getList" resultType="rK.smetsysesor.hye.VO.BaseBoardVO">
+		<![CDATA[
+			SELECT IDX, TITLE, WRITER, REGDATE FROM BASEBOARD ORDER BY IDX DESC;
+		]]>
+	</select>
+	
+	<!-- public void write(BaseBoardVO baseBoardVO); -->
+	<insert id="write">
+		INSERT INTO BASEBOARD (TITLE, CONTENT, WRITER, REGDATE)
+		VALUES (#{title}, #{content}, "ADMIN", now())
+	</insert>
+	
+	<!-- public BaseBoardVO read(int idx); -->
+	<select id="view" resultType="rK.smetsysesor.hye.VO.BaseBoardVO">
+		SELECT IDX, TITLE, CONTENT FROM BASEBOARD WHERE IDX = #{idx} 
+	</select>
+	
+	<!-- public void delete(int idx); -->
+	<delete id="delete">
+		DELETE FROM BASEBOARD WHERE IDX = #{idx}
+	</delete>
+	
+	<!-- public int update(BaseBoardVO baseBoardVO); -->
+	<update id="update" >
+		UPDATE BASEBOARD
+		SET TITLE = #{title}, CONTENT = #{content}, MODDATE = now()
+		WHERE IDX = #{idx}
+	</update>
+	
+	<!-- public ArrayList<BaseBoardVO> listPage(int page); -->
+	<select id="listPage" resultType="rK.smetsysesor.hye.VO.BaseBoardVO">
+        SELECT * FROM BASEBOARD
+        ORDER BY IDX DESC
+        LIMIT #{page}, 10
+	</select>
+	
+	<!-- public ArrayList<BaseBoardVO> listCriteria(BaseBoardVO baseBoardVO); -->
+	<select id="listCriteria" resultType="rK.smetsysesor.hye.VO.BaseBoardVO">
+		SELECT IDX, TITLE, CONTENT, REGDATE
+		FROM BASEBOARD
+		ORDER BY IDX DESC
+		LIMIT #{pageStart}, #{perPageNum}
+	</select>
+	<!-- public int countIdx(PagingBase pagingBase); -->
+	<select id="countIdx" resultType="int">
+		SELECT COUNT(IDX)
+		FROM BASEBOARD
+	</select>
+	
+</mapper>
