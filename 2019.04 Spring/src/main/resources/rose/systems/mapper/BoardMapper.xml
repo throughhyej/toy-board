@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rose.systems.mapper.BoardMapper">
+
+	 <select id="getList" resultType="rose.systems.vo.BoardVO">
+		 <![CDATA[
+		 	select * from board where bno > 0 order by bno desc
+		 ]]>
+	 </select>
+	 
+	<select id="ListPage" resultType="rose.systems.vo.BoardVO">
+		<![CDATA[
+			select bno, title, content, writer, regdate, viewCount
+			from board
+			where bno > 0 
+			 order by bno desc
+			 limit #{page}, 10
+		]]>
+	</select>
+
+
+	<select id="listCriteria" resultType="rose.systems.vo.BoardVO">
+		 <![CDATA[
+			 select bno, title, content, writer, regdate, viewCount
+			 from board 
+			 where bno > 0 
+			 order by bno desc
+			 limit #{pageStart}, #{perPageNum}
+		 ]]>
+	</select>
+	
+	<select id="countBno" resultType="int">
+		 <![CDATA[
+			 select  count(bno) 
+			 from  board 
+			 where bno > 0 
+		 ]]>
+	</select>
+  
+	<insert id="insert" useGeneratedKeys="true" keyProperty="bno" parameterType="BoardVO">
+		insert into board (title, content, writer)
+		values (#{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="read" resultType="rose.systems.vo.BoardVO">
+		select * from board where bno = #{bno}
+	</select>
+	
+	<delete id="delete">
+		delete from board where bno = #{bno}
+	</delete>
+	
+	<update id="update">
+		update board
+		set title=#{title},
+		content=#{content}
+		where bno=#{bno}
+	</update>
+		
+	<update id="updateViewCount">
+		update board
+		set viewCount = viewCount + 1
+		where bno = #{bno}
+	</update>
+
+<!-- 
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select MAX(bno)+1 from board
+		</selectKey>
+		insert into board (bno, title, content, writer, viewCount)
+		values(#{bno}, #{title}, #{content}, #{writer}, #{viewCount})
+	</insert>
+ -->
+
+
+	<sql id="sql">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString">
+				and title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'w'.toString">
+				and writer like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'c'.toString">
+				and content like CONCAT('%', #{keyword}, '%')
+			</if>
+		</if>
+	</sql>
+	
+	<select id="search" resultType="rose.systems.vo.BoardVO">
+		<![CDATA[
+			select * from board where bno > 0
+		]]>
+		<include refid="sql"></include>
+		<![CDATA[
+			order by bno desc
+			limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="searchCount" resultType="int">
+		<![CDATA[
+			select count(bno)
+			from board
+			where bno > 0
+		]]>
+		<include refid="sql"></include>
+	</select>
+
+
+
+ </mapper>

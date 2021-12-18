@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	
+	
+	<task:annotation-driven />
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- <context:property-placeholder location="classpath:db.properties"/> -->
+
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property value="com.mysql.jdbc.Driver" name="driverClassName" />
+		<property value="jdbc:mysql://www.rosesystems.kr:13306/board?useSSL=false" name="url" />
+		<property value="root" name="username" />
+		<property value="fhwm3400!" name="password" />
+	</bean>
+
+	<bean id="sqlSessionFactory"  class="org.mybatis.spring.SqlSessionFactoryBean">	   
+	    <property name="dataSource" ref="dataSource" />	
+	 	<property name="configLocation"  
+	 		value="classpath:/mybatis-config.xml">
+	 	</property>	
+	 	<property name="mapperLocations" 
+		      value="classpath:rose/systems/mapper/BoardMapper.xml">
+		</property>			
+	</bean>
+
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"  destroy-method="clearCache">
+	  <constructor-arg name="sqlSessionFactory"  ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+	<mybatis-spring:scan base-package="rose.systems.mapper" />
+	<context:component-scan base-package="rose.systems.dao" />
+	<context:component-scan base-package="rose.systems.service" />
+
+</beans>

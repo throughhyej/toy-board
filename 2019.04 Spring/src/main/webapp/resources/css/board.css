@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 게시판 */
+.board_wrap {display:inline-block;width:100%;padding:50px 10px;}
+
+.line_list {width:100%; margin-bottom:80px;}
+.line_list > table {border-top:2px solid #545454; width:100%;}
+.line_list > table th {background:#fcfcfc; border-bottom:1px solid #e0e0e0; height:40px; font-size:11px; text-align:center;}
+.line_list > table td {border-bottom:1px solid #e0e0e0; text-align:center; font-size:11px ; height:40px;}
+.line_list > table td a {color:#000;}
+.line_list > table td img.pro {width:60px; height:60px;}
+.line_list > table td div.numCheck img.plus {width:20%; height:20%;} 
+.line_list > table td em {font-weight:bold; color:#000; font-family:tahoma;font-style:normal; font-size:12px;}
+.line_list > table td.tleft {text-align:left; padding-left:10px;}
+
+.tCont {}
+.tCont ul {overflow:hidden; width:100%; }
+.tCont ul li {float:none; }
+.tCont ul li.pic {width:100%;}
+.tCont ul li.pic img.pro {width:100%; height:auto;}
+.tCont ul li.name {width:100%;}
+.tCont ul li .proName {font-size:12px; margin:15px 0 5px 0; width:100%; color:#000;}
+.tCont ul li .proName a {color:#000;}
+.tCont ul li .proOp {padding:7px 0; font-size:11px; border-top:1px dashed #eee; }
+
+.tAnswer {text-align:left; padding:0 10px; background:#fdfdfd;}
+.tAnswer ul {overflow:hidden; border-bottom:1px solid #eee; padding:10px 0;}
+.tAnswer ul:last-child {border-bottom:0;}
+.tAnswer ul li {float:left;}
+.tAnswer ul li.icon {padding:0 20px 0 10px;}
+.tAnswer ul li.comment {line-height:1.4; font-size:12px;}
+.iconQ {font-size:20px; font-weight:bold; color:#333; font-family:AppleGothic;}
+.iconA {font-size:20px; font-weight:bold; color:#dc4b4b; font-family:AppleGothic;}
+
+.board_input_cont {min-height:300px; vertical-align:top; padding:20px;letter-spacing:0;}
+
+@media only screen and (min-width: 768px) {	
+	.line_list {width:100%; margin-bottom:80px;}
+	.line_list > table {border-top:2px solid #545454; width:100%;}
+	.line_list > table th {background:#fcfcfc; border-bottom:1px solid #e0e0e0; height:40px; font-size:13px;}
+	.line_list > table td {border-bottom:1px solid #e0e0e0;height:40px; text-align:center; font-size:14px; padding:10px 0;}
+	.line_list > table td img.pro {width:75px; height:auto; max-height:75px;}
+	.line_list > table td div.numCheck img.plus {width:auto; height:100%;} 
+	.line_list > table td em {font-weight:bold; color:#000; font-family:tahoma;font-style:normal; font-size:15px;}
+	.line_list > table td.tleft {text-align:left; padding-left:20px;}
+
+	.tCont {}
+	.tCont ul {overflow:hidden; width:100%; }
+	.tCont ul li {float:left; }
+	.tCont ul li.pic {width:20%;}
+	.tCont ul li.pic img.pro {width:75px; height:auto;}
+	.tCont ul li.name {width:80%; padding-left:20px;}
+	.tCont ul li .proName {font-size:15px; margin:15px 0 5px 0; width:100%; color:#000;}
+	.tCont ul li .proName a {color:#000;}
+	.tCont ul li .proOp {padding:7px 0; font-size:11px; border-top:1px dashed #eee; }
+
+	.tAnswer {text-align:left; padding:0 20px; background:#fdfdfd;}
+	.tAnswer ul {overflow:hidden; border-bottom:1px solid #eee; padding:20px 0;}
+	.tAnswer ul:last-child {border-bottom:0;}
+	.tAnswer ul li {float:left;}
+	.tAnswer ul li.icon {padding:0 40px;}
+	.tAnswer ul li.comment {line-height:1.4; font-size:13px;}
+	.iconQ {font-size:25px; font-weight:bold; color:#333; font-family:AppleGothic;}
+	.iconA {font-size:25px; font-weight:bold; color:#dc4b4b; font-family:AppleGothic;}
+}
+
+
+
+.black_list {width:100%; position:relative; letter-spacing:0; margin:10px auto 85px auto;}
+.black_list > table {width:100%;border-top:1px solid #000;}
+.black_list > table th {background:#494949; color:#ccc; border-bottom:1px solid #6a6a6a; font-weight:normal; font-size:10px; padding:5px 2px; border-right:1px solid #6a6a6a;}
+.black_list > table th:last-child {border-right:none;}
+.black_list > table td {border-bottom:1px solid #e2e2e2; text-align:center; border-right:1px solid #e2e2e2; background:#fff; padding:5px 2px; font-size:11px;}
+.black_list > table td:last-child {border-right:none;}
+.black_list > table td.tleft {text-align:left;padding-left:15px;}
+.black_list > table td.cont {text-align:left;padding:25px;background:#fdfcfa;}
+.black_list > table td.cont_a {text-align:left;padding:25px;background:#ffffe8;}
+
+.tTit {float:left; font-size:11px; color:#333; font-family:malgun gohtic; letter-spacing:-1px; display:inline;line-height:25px;}
+.tTit > span {font-size:14px;margin-left:3px;}
+.searchWrap {float:right; margin:0 0 10px 0; overflow:hidden; height:25px;}
+.searchWrap > ul {overflow:hidden; float:right;}
+.searchWrap > ul > li {float:left;}
+select.search {width:60px; height:24px; font-size:11px;}
+input.search {width:120px; height:24px; background:rgba(0,0,0,.02); border:1px solid #e8e8e8;}
+.btnSearch {width:24px; height:24px; height:24px;border:1; margin:0; background:#111; background-position:center center; background-size:100%; display:inline-block; cursor:pointer; }
+.btnSearch > span {display:block;width:24px; height:24px;line-height:24px;color:#fff;text-align:center;}
+
+
+
+@media only screen and (min-width: 768px) {
+	.black_list > table th {height:40px; font-size:12px; padding:0; }
+	.black_list > table td {height:40px;border-bottom:1px solid #e2e2e2;text-align:center;border-right:1px solid #e2e2e2; background:#fff; font-size:14px;}
+
+	.tTit {font-size:14px; letter-spacing:0; line-height:35px;}
+	.tTit > span {font-size:18px;}
+    .searchWrap {float:right; margin:0 0 15px 0; overflow:hidden; height:34px; }
+    .searchWrap > ul {overflow:hidden; float:right;}
+	.searchWrap > ul > li {float:left;}
+	input.search {height:34px; width:200px;}
+	select.search {height:34px;}
+	.btnSearch {width:34px; height:34px;display:inline-block; }
+	.btnSearch > span {display:block;width:34px; height:34px;line-height:34px;color:#fff;text-align:center;}
+}
+
+
+/* faq */
+
+.faq {width:100%; height:50px; margin:0 auto; }
+.faq ul {overflow:hidden; }
+.faq ul li {float:left;}
+.faq .fcont {width:530px; padding:142px 0 0 316px;}
+.faq .fcont input.fsearch {width:366px; height:36px; border:1px solid #afafaf; vertical-align:bottom;}
+.faq .fcont .btn_fsearch {width:100px; height:38px; text-align:center; color:#fff; line-height:38px; font-size:15px; background:#727272; border-radius:3px; display:inline-block;}
+
+.faq_list {width:100%; margin:50px auto 0 auto; }
+.faq_list ul.que li.textQ {font-size:20px; font-weight:bold; color:#000; font-family:malgun gothic; display:inline-block; line-height:55px; padding-left:10px;}
+.faq_list .textA {font-size:20px; font-weight:bold; color:#ec6373; font-family:malgun gothic; display:inline; float:left; width:5%;}
+.faq_list ul {overflow:hidden; border-bottom:1px solid #c9c9c9;}
+.faq_list ul li {float:left; }
+.faq_list ul.que {height:45px; position:relative; font-size:12px;}
+.faq_list ul.que li { line-height:45px;  padding-left:20px;}
+.faq_list ul.que li dd {float:left; margin-top:22px;}
+.faq_list ul.que li .btnSet { position:absolute; right:15px;}
+.faq_list ul.ans {background:yellow;}
+.faq_list ul.ans .fview {line-height:1.5; padding:10px 20px 20px 20px; width:100%; background:#fcfcfc; border-bottom:1px solid #c9c9c9; overflow:hidden; }
+.faq_list ul.ans .fview .txt {font-size:12px; margin:0 0 0 35px; float:right; text-align:left; width:90%;}
+
+
+@media only screen and (min-width: 640px) {	
+	.faq_list ul.que li.textQ {font-size:30px; font-weight:bold; color:#000; font-family:malgun gothic; display:inline-block; line-height:60px; padding-left:35px;}
+	.faq_list .textA {font-size:30px; font-weight:bold; color:#ec6373; font-family:malgun gothic; display:inline; float:left; width:5%;}
+    .faq_list ul.que {height:60px; position:relative; font-size:14px;}
+	.faq_list ul.que li { line-height:60px; padding-left:20px;}
+	.faq_list ul.ans .fview {line-height:1.5; padding:20px 35px 20px 35px; background:#fcfcfc; border-bottom:1px solid #c9c9c9; overflow:hidden;}
+	.faq_list ul.ans .fview .txt {font-size:14px; margin:0 0 0 0; float:right; text-align:left; width:90%;}
+}
+
+
+
+/* faq 탭메뉴 */
+.faqTab {width:100%; margin:20px 0 0 0;}
+.faqTab ul li {float:left; width:20%; height:30px; font-size:12px; background:#fdfdfd; line-height:30px; border-top:1px solid #e3e3e3; border-right:1px solid #e3e3e3;  border-bottom:1px solid #333;}
+.faqTab ul li:first-child {border-left:1px solid #e3e3e3;}
+.faqTab ul li.active {background:#fff; border-top:1px solid #333; border-left:1px solid #333; border-right:1px solid #333; border-bottom:1px solid #fff; font-size:13px; color:#000; font-weight:bold;}
+
+@media only screen and (min-width: 640px) {
+	.faqTab ul li {height:40px; line-height:40px; font-size:13px;}
+	.faqTab ul li.active {font-size:15px;}
+}
+
+

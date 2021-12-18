@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>로즈시스템즈_게시판</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="로즈시스템즈입니다"/>
+    <meta name="format-detection" content="telephone=no"/> <!-- 전화번호 CSS 초기화 -->
+    <meta name="keywords" content="rosesystems"/>
+    <meta property="og:title" content="rosesystems"/>
+    <meta property="og:description" content="rosesystems"/>
+    <!--
+        <link rel="canonical" href="#0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    -->
+    <!-- CSS : COMMON -->
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="css/board.css"/>
+    <!-- Themify Icons -->
+        <link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+        <!--[if !IE]><!-->
+</head>
+
+
+<body id="allWrap">
+<div class="board_wrap">
+
+    <form id="searchForm">
+    <span class="tTit">TOTAL<span>2</span></span>
+    <div class="searchWrap">
+    
+      <input type="hidden" name="board_id" value=""/>
+        <ul>
+          <li>
+            <select class="search" id="search" name="search">
+                <option value="subject">제목</option>
+                <option value="name">작성자</option>
+                <option value="content">내용</option>
+            </select>
+          </li>
+          <li class="mgl02"><input type="text" id="searchword" name="searchword" class="search" ></li>
+          <li class="mgl05"><span class="btnSearch" id="btn_search"><span class="ti-search bold"></span></span></li>
+        </ul>
+      
+    </div>
+    <!--// searchWrap end -->
+    </form>
+    
+        <div class="line_list">    
+        <table summary="" cellpadding="0" cellspacing="0">        
+            <colgroup>			
+                <col width ="10%"/>
+                <col width ="52%" />
+                <col width ="18%" />
+                <col width ="10%" />
+                <col width ="10%" />
+            </colgroup>            
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>글제목</th>
+                    <th>등록일</th>
+                    <th>작성자</th>
+                    <th class="input_txt">조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2</td>
+                    <td class="tleft">
+                        <a href="board_view.html"><span class="ellipsis">글제목 2 입니다.</span></a> 
+                    </td>
+                    <td class="letter_zero fc_gray"><span class="ellipsis">2018-03-02</span></td>
+                    <td>관리자</td>
+                    <td class="letter_zerod"><span class="ellipsis">123</span></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="tleft">
+                        <a href="board_view.html"><span class="ellipsis">글제목 1 입니다.</span></a> 
+                    </td>
+                    <td class="letter_zero fc_gray"><span class="ellipsis">2018-03-01</span></td>
+                    <td>관리자</td>
+                    <td class="letter_zerod"><span class="ellipsis">123</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+          <!-- 버튼 -->
+          <div class="mgt15 mgr05 fr">
+             <a href="board_write.html"><span id="btn_write" class="btn btnB">글쓰기</span></a>
+             <!--버튼부분 a태그는 테스트용, 개발적용후 삭제요망 -->
+          </div>
+          
+        <div class="cont_bottomWrap pdt30">
+            <div class="pagination center">
+                <span class="btn_p ti-angle-double-left arrow"></span>
+                <span class="btn_p ti-angle-left arrow prev"></span>
+                <span class="btn_p btn_num on"><a href="#0">1</a></span>
+                <span class="btn_p btn_num"><a href="#0">2</a></span>
+                <span class="btn_p btn_num"><a href="#0">3</a></span>
+                <span class="btn_p btn_num"><a href="#0">4</a></span>
+                <span class="btn_p ti-angle-right arrow next"></span>
+                <span class="btn_p ti-angle-double-right arrow"></span>
+            </div>
+        </div>
+        
+        
+        <form name="frmChk" method="post">
+            <input type="hidden" name="board_idx">
+            <input type="hidden" name="board_id" value="">
+            <input type="hidden" name="category" value="">
+            <input type="hidden" name="page" value="">
+            <input type="hidden" name="search" value="">
+            <input type="hidden" name="searchword" value="">
+        </form>
+    
+    </div>
+    <!--// line_list -->
+    
+</div>
+<!--// board_wrap -->
+
+
+
+</body>
+</html>

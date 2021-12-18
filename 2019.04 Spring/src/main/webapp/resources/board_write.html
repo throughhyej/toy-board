@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>로즈시스템즈_게시판</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="로즈시스템즈입니다"/>
+    <meta name="format-detection" content="telephone=no"/> <!-- 전화번호 CSS 초기화 -->
+    <meta name="keywords" content="rosesystems"/>
+    <meta property="og:title" content="rosesystems"/>
+    <meta property="og:description" content="rosesystems"/>
+    <!--
+        <link rel="canonical" href="#0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    -->
+    <!-- CSS : COMMON -->
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="css/board.css"/>
+    <!-- Themify Icons -->
+        <link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+</head>
+
+
+<body id="allWrap">
+
+	<div class="board_wrap line_list">
+<!--
+		<form id="insert_form" name="insert_form" method="post" action="">
+-->        
+		<input type="hidden" name="i_main" value="">
+		<input type="hidden" name="i_board_id" value="">
+
+		<input type="hidden" name="i_thumb_file_name" />
+		<input type="hidden" name="i_file_desc" />
+		<input type="hidden" name="i_thumb_file_name" />
+		<input type="hidden" name="i_file_desc" />
+        
+
+		 <table summary="" cellpadding="0" cellspacing="0">
+			<colgroup>
+			<col width="20%" />
+			<col width="80%" />
+			</colgroup>
+			<thead>
+			<tr>
+				<th>
+					작성자
+				</th>
+				<td class="tleft">
+					<input type="text" name="i_member_name" id="i_member_name" value="" style="width:120px" class="input_login1 mgb05 mgt03" hname="작성자를 입력해 주세요" readonly/>
+				</td>
+			</tr>		
+			<tr>
+            <input type="hidden" name="i_member_name" class="input_bg" value=""/>
+            </thead>
+			<tbody>      
+<!--                  
+            <tr>
+				<th scope="row">분류</th>
+				<td class="tleft">
+					<select id="i_category" name="i_category" style="font-size:9pt; border:1px solid #e2e2e2; vertical-align:bottom;" hname="분류를 선택해 주세요">
+						<option value="">::선택해 주세요::</option>
+						<option value="">옵션1</option>
+						<option value="">옵션2</option>
+						<option value="">옵션3</option>
+						<option value="">옵션4</option>
+					</select>		
+				</td>
+			</tr>
+-->           
+			<tr>
+				<th>제목</th>
+				<td class="tleft">
+					<input type="text" name="i_subject" id="i_subject"  style="width:99%" class="input_login1 mgb05 mgt03" hname="제목을 입력해 주세요" />
+				</td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td class="tleft" style="padding:10px;">
+					<textarea id="i_content" name="i_content" hname="내용을 입력해 주세요"></textarea>
+				</td>
+			</tr>
+<!--           
+			<tr>
+				<th>리스트이미지</th>
+				<td  class="tleft">
+					<input type="file" name="i_list_img" class="input30" hname="리스트이미지를 선택해 주세요">
+				</td>
+			</tr>
+-->
+<!--           
+			<tr>
+				<th>
+					<label for="title">공지노출</label>
+				</th>
+				<td class="tleft">
+					<input type="radio" name="i_notice" value="Y"> 예
+					<input type="radio" name="i_notice" value="N" checked> 아니오
+				</td>
+			</tr>
+				<input type="hidden" name="i_notice" value="N">
+-->
+			<tr>
+				<th>
+					<label for="pwd">글보안</label>
+				</th>
+				<td class="tleft">
+					<input type="password" name="i_pass" id="" style="width:120px" class="input_login1 mgb05 mgt03" min="4" mname="비밀번호는 4자리 이상입니다" hname="비밀번호를 입력해 주세요" />
+					<span class="fs_11">* (영문, 숫자 4~8자) </span>
+				</td>
+			</tr>
+
+			<tr>
+				<th>
+					<label for="pwd">글보안</label>
+				</th>
+				<td class="tleft">
+					비밀글 <input type="checkbox" name="i_private" value="Y" style="border:none;background-color:#fff;">
+				</td>
+			</tr>
+			<input type="hidden" name="i_private" value="Y">
+
+			<tr>
+				<th>
+					<label for="file1">파일첨부1</label>
+				</th>
+				<td class="tleft">
+					<input type="file" name="i_file_name1" id="i_file_name1"  style="width:270px;border:none;padding:0;" class="mgb05 mgt03">
+					<span class="fs_11">* 3MB 이하, 최대 2개</span><br />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="file2">파일첨부2</label>
+				</th>
+				<td class="tleft">
+					<input type="file" name="i_file_name2" id="i_file_name2"  style="width:270px;border:none;padding:0;" class="mgb05 mgt03">
+					<br />
+				</td>
+			</tr>
+
+		</tbody>
+		</table>
+
+
+		<div style="text-align:center;margin-top:50px;">
+		    <span id="btn_ok" class="btnO">등록</span>	
+			<span id="btn_cancel" class="btnG">취소</span>				
+		</div>
+
+		</form>	
+
+</div>
+<!--// line_list end -->
+
+
+
+</body>
+</html>

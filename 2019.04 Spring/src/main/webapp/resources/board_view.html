@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>로즈시스템즈_게시판</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="로즈시스템즈입니다"/>
+    <meta name="format-detection" content="telephone=no"/> <!-- 전화번호 CSS 초기화 -->
+    <meta name="keywords" content="rosesystems"/>
+    <meta property="og:title" content="rosesystems"/>
+    <meta property="og:description" content="rosesystems"/>
+    <!--
+        <link rel="canonical" href="#0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    -->
+    <!-- CSS : COMMON -->
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+        <link rel="stylesheet" type="text/css" href="css/board.css"/>
+    <!-- Themify Icons -->
+        <link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+</head>
+
+
+<body id="allWrap">
+
+	<div class="board_wrap line_list">
+
+		 <table summary="" cellpadding="0" cellspacing="0">
+			<thead>
+			<tr>
+				<th>
+				  <span class="fs_15 bold">글제목</span>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="tright" style="letter-spacing:-1px;">
+					
+					 <span class="fc_01">작성자 : </span>
+					 <span class="mgr05">관리자</span>
+					 <span class="fc_01">조회수 : </span>
+					 <span class="mgr05 letter_zero">123</span>
+					 <span class="fc_01">등록일 : </span>
+					 <span class="letter_zero">2018-03-02</span>
+
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="board_input_cont tleft">
+					내용을 입력해 주세요.
+				</td>
+			</tr>
+			<tr>
+				<td class="tright" style="padding-right:20px;">
+					 <span class="name">첨부파일 : </span>
+                     <span id=""disp_attachfile""><a href="#0"><span class="ti-clip mgl02"></span> 첨부파일명.hwp</a></span>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<table class="mgt30" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<th width="30%" scope="row"><span class="ti-angle-up fl"></span> 이전글</th>
+				<td class="tleft">
+                	<span id="disp_prev_subject"><a href="#0" class="product">이전글 제목입니다</a></span>
+<!--
+					<span id="disp_prev_subject">이전글이 없습니다</span>
+-->                  
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><span class="ti-angle-down fl"></span> 다음글</th>
+				<td class="tleft">
+                    <span id="disp_next_subject"><a href="#0" class="product">다음글 제목입니다</a></span>
+<!--
+					<span id="disp_next_regdt">다음글이 없습니다</span>
+-->
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+
+		  <!-- 버튼 -->
+		  <div class="mgt15 mgb20 mgr10 tright">
+<!--
+			 <a href="board_write.html"><span id="btn_write" class="btn btnB">글쓰기</span></a>
+-->
+             <a href="board.html"><span id="btn_list" class="btn btnG">목록</span></a>
+             <a href="board_modify.html"><span id="btn_modify" class="btn btnG">수정</span></a>
+             <a href="#0"><span id="btn_delete" class="btn btnG4">삭제</span></a>
+             <!--버튼부분 a태그는 테스트용, 개발적용후 삭제요망 -->
+          </div>
+          
+          
+		<form name="frmChk" method="post">
+			<input type="hidden" name="board_idx">
+			<input type="hidden" name="board_id" value="">
+			<input type="hidden" name="category" value="">
+			<input type="hidden" name="page" value="">
+			<input type="hidden" name="search" value="">
+			<input type="hidden" name="searchword" value="">
+		</form>
+
+</div>
+<!--// line_list -->
+
+
+
+</body>
+</html>
